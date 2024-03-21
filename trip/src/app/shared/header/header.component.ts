@@ -26,4 +26,9 @@ export class HeaderComponent {
     localStorage.removeItem('email');
     this.username = localStorage.getItem('email') as string;
   }
+
+  public goToDashboard(): void{
+    this.router.navigate(['dashboard']);
+
+  }
 }

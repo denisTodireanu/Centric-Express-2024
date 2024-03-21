@@ -1,9 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { TripModel } from '../models';
-import { TripsModel } from '../models/trips.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +18,8 @@ export class TripService {
 
   constructor(private readonly http: HttpClient) { }
 
-  getAll(): Observable<TripsModel> {
-    return this.http.get<TripsModel>(this.endpoint, this.httpOptions);
+  getAll(): Observable<TripModel[]> {
+    return this.http.get<TripModel[]>(this.endpoint, this.httpOptions);
   }
 
   get(id: string): Observable<TripModel> {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { TripModel, TripsModel } from '../models';
+import { TripModel } from '../models';
 import { TripService } from '../services/trip.service';
 
 @Component({
@@ -18,8 +18,8 @@ export class TripListComponent implements OnInit {
     private service: TripService) { }
 
   public ngOnInit(): void {
-    this.service.getAll().subscribe((data: TripsModel) => {
-      this.tripList = data.results;
+    this.service.getAll().subscribe((data: TripModel[]) => {
+      this.tripList = data;
     });
   }
 
